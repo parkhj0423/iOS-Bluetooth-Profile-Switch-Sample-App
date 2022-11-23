@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Serial View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SerialViewController" customModule="BluetoothSwitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-Qc-PtZ">
+                                <rect key="frame" x="300" y="77" width="89" height="30"/>
+                                <state key="normal" title="scan"/>
+                                <connections>
+                                    <action selector="scanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RUR-r4-Hpe"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="NXA-HW-wRc">
+                                <rect key="frame" x="32.5" y="216" width="349.5" height="464"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV9-gO-8Sq">
+                                        <rect key="frame" x="119.5" y="0.0" width="110.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgp-KB-4Ky">
+                                        <rect key="frame" x="112.5" y="83.5" width="124" height="30"/>
+                                        <state key="normal" title="get current profile"/>
+                                        <connections>
+                                            <action selector="getCurrentProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NMz-7v-kgl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIM-N1-1LU">
+                                        <rect key="frame" x="103" y="176.5" width="143" height="30"/>
+                                        <state key="normal" title="change profile to hfp"/>
+                                        <connections>
+                                            <action selector="changeProfileToHFP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x7Q-jG-bz8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJ2-av-kgo">
+                                        <rect key="frame" x="95" y="269.5" width="159" height="30"/>
+                                        <state key="normal" title="change profile to A2DP"/>
+                                        <connections>
+                                            <action selector="changeProfileToA2DP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3BA-Db-yy9"/>
+                                            <action selector="changeProfileToHFP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ZV-ma-Vrc"/>
+                                        </connections>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rz6-px-YYK">
+                                        <rect key="frame" x="99.5" y="362.5" width="150" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="29g-P2-2vy"/>
+                                            <constraint firstAttribute="height" constant="4" id="cuT-vs-uwy"/>
+                                        </constraints>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ri-ji-dfh">
+                                        <rect key="frame" x="0.0" y="429.5" width="349.5" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7j0-hH-kOf">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="play audio"/>
+                                                <connections>
+                                                    <action selector="playAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bm9-Es-5hr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhG-nT-hvn">
+                                                <rect key="frame" x="116.5" y="0.0" width="116.5" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="pause audio"/>
+                                                <connections>
+                                                    <action selector="pauseAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRA-34-BQu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-Ji-T4s">
+                                                <rect key="frame" x="233" y="0.0" width="116.5" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="clearAudio"/>
+                                                <connections>
+                                                    <action selector="clearAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DWK-I8-jYh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="connected Peripheral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAP-Sb-H01">
+                                <rect key="frame" x="74" y="86" width="213" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TBg-Qc-PtZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="4JK-6L-aDd"/>
+                            <constraint firstItem="TBg-Qc-PtZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="300" id="5tk-Pq-1ic"/>
+                            <constraint firstItem="NXA-HW-wRc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fCc-r4-wZ1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBg-Qc-PtZ" secondAttribute="trailing" constant="25" id="mqH-NP-5PR"/>
+                            <constraint firstItem="NXA-HW-wRc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sTP-LZ-3i7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7k0-sF-WJn"/>
+                    <connections>
+                        <outlet property="connectedPeripheral" destination="DAP-Sb-H01" id="Eo1-Uq-Ley"/>
+                        <outlet property="currentProfile" destination="NV9-gO-8Sq" id="ISx-zU-bjk"/>
+                        <outlet property="progressBar" destination="rz6-px-YYK" id="Fww-vV-fqk"/>
+                        <segue destination="qdc-qy-CZQ" kind="presentation" identifier="ScanViewController" id="bHY-tc-NSn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36.231884057971016" y="124.55357142857142"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="Gka-yW-rWe">
+            <objects>
+                <viewController storyboardIdentifier="ScanViewController" id="qdc-qy-CZQ" customClass="ScanViewController" customModule="BluetoothSwitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3m3-PA-bgs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScanTableViewCell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j7w-Rk-i70">
+                                <rect key="frame" x="0.0" y="48" width="414" height="790"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScanTableViewCell" rowHeight="50" id="goF-ox-MU9" customClass="ScanTableViewCell" customModule="BluetoothSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="goF-ox-MU9" id="Dvr-Bk-gSH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peripheral Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q3-dN-kcD">
+                                                    <rect key="frame" x="30" y="14.5" width="328" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="7Q3-dN-kcD" secondAttribute="height" multiplier="349:22" id="WBG-s4-SnW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Q3-dN-kcD" firstAttribute="leading" secondItem="Dvr-Bk-gSH" secondAttribute="leading" constant="30" id="DJT-iF-ooh"/>
+                                                <constraint firstItem="7Q3-dN-kcD" firstAttribute="centerY" secondItem="Dvr-Bk-gSH" secondAttribute="centerY" id="NiW-7s-wRw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="peripheralName" destination="7Q3-dN-kcD" id="IJP-Vg-doh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qdc-qy-CZQ" id="tVp-Rk-MWQ"/>
+                                    <outlet property="delegate" destination="qdc-qy-CZQ" id="nW9-gN-qzK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="spL-37-kY4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="spL-37-kY4" firstAttribute="trailing" secondItem="j7w-Rk-i70" secondAttribute="trailing" id="7Co-jg-3Oi"/>
+                            <constraint firstItem="j7w-Rk-i70" firstAttribute="leading" secondItem="spL-37-kY4" secondAttribute="leading" id="c48-M6-aIc"/>
+                            <constraint firstItem="spL-37-kY4" firstAttribute="bottom" secondItem="j7w-Rk-i70" secondAttribute="bottom" id="dWP-ZL-FvH"/>
+                            <constraint firstItem="j7w-Rk-i70" firstAttribute="top" secondItem="spL-37-kY4" secondAttribute="top" id="eTS-k7-HMU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="j7w-Rk-i70" id="ZzB-bV-zUv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khk-x2-hmi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.82608695652186" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
